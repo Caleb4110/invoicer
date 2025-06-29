@@ -1,0 +1,27 @@
+[package]
+name = "inv_tools"
+edition = "2021"
+version = "0.1.0"
+authors = ["Caleb Walker <calebw4110@gmail.com>"]
+license = "MIT OR Apache-2.0"
+description = "A set of tools to create and generate pdf invoices"
+readme = "README.md"
+homepage = "https://github.com/Caleb4110/inv-tools"
+repository = "https://github.com/Caleb4110/inv-tools"
+keywords = ["invoice", "pdf"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+chrono = "0.4.41"
+serde = { version = "1.0.219", features = ["derive"] }
+email_address = "0.2.9"
+phonenumber = "0.3.7"
+rusqlite = "0.36.0"
+tempfile = "3.20.0"
+wkhtmltopdf = "0.4.0"
+clap = "4.5.40"
+thiserror = "2.0.12"
+
+[lib]
+name = "inv_tools"
+path = "src/lib.rs"
