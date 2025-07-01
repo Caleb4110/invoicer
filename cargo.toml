@@ -1,5 +1,6 @@
 [workspace]
 members = [
+    "inv-tools",
     "clinv",
-    "inv-tools"
+    "sainv/src-tauri"
 ]

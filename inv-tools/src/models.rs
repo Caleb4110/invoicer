@@ -1,4 +1,6 @@
-#[derive(Debug)]
+use serde::Serialize;
+
+#[derive(Debug, Serialize)]
 pub struct Client {
     pub id: i32,
     pub name: String,
@@ -7,7 +9,7 @@ pub struct Client {
     pub address: String
 }
 
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub struct InvoiceItem {
     pub id: i32,
     pub description: String,
@@ -16,7 +18,7 @@ pub struct InvoiceItem {
     pub amount: f64,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub struct Invoice {
     pub id: i32,
     pub client_id: i32,
@@ -24,7 +26,7 @@ pub struct Invoice {
     pub items: Vec<InvoiceItem>,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub struct InvoiceForPdf {
     pub id: i32,
     pub name: String,

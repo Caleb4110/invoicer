@@ -1,0 +1,21 @@
+.clients-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.clients-utils-container {
+  display: flex;
+  flex-direction: row;
+  padding: 0.25rem;
+}
+
+.search-res-container {
+  background-color: var(--color-background2);
+  display: flex;
+  flex-direction: column;
+  padding: 0.25rem;
+}
+
+.search-res-container > * + * {
+  margin-top: 0.25rem;
+}
