@@ -1,7 +1,21 @@
-.client-card-container {
+.card-container {
   background-color: var(--color-1);
   display: flex;
+  height: 5rem;
   flex-direction: row;
-  justify-content: space-around;
-  padding: 0.25rem;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.card-header {
+  margin-top: auto;
+  margin-bottom: auto;
+  color: var(--color-11);
+  font-weight: bold;
+}
+
+.card-data {
+  font-size: 1rem;
+  margin-top: auto;
+  margin-bottom: auto;
 }

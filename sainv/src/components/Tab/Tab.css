@@ -2,18 +2,20 @@
 
 .tab-btn {
   width: 10rem;
-  height: 1.5rem;
+  height: 2rem;
+  font-size: 1rem;
   border: none;
   color: var(--color-foreground);
   margin: 0;
+  transition: background-color 0.2s
 }
 
 .tab-btn.active {
-  background: var(--color-background);
+  background-color: var(--color-background);
 }
 
 .tab-btn:not(.active) {
-    background: var(--color-1);
+    background-color: var(--color-1);
 
 }
 

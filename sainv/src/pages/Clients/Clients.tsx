@@ -26,13 +26,24 @@ export default function Clients() {
   }, []);
 
   function handleSearch(e: any) {
-    e.preventDefault();
+    const search = e.target.value;
+    setSearchStr(search);
 
-    console.log("here");
+    const filteredClients = allClients.filter((client: Client_t) =>
+      client.name.includes(search) ||
+      client.address.includes(search) ||
+      client.business_name.includes(search) ||
+      client.email.includes(search))
+    setSearchRes(filteredClients);
   }
 
-  function handleNewClient() {
-    console.log("new client");
+  // TODO: Create a form for adding a new client
+  async function handleNewClient() {
+    const result = await invoke("new_client", { name: "Test", businessName: "test2", email: "test3", address: "test4" });
+    const data = await invoke<Client_t[]>("all_clients");
+    setAllClients(data);
+    setSearchRes(data); // TODO: Temp. need to call filter again 
+
   }
 
   if (loading) {

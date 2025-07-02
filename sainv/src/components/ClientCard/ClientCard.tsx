@@ -8,10 +8,10 @@ interface Props {
 
 export default function ClientCard({ client }: Props) {
   return (
-    <div className="client-card-container">
-      <h3>{client.business_name}</h3>
-      <p>{client.name}</p>
-      <p>{client.email}</p>
+    <div className="card-container">
+      <h3 className="card-header">{client.business_name}</h3>
+      <p className="card-data">{client.name}</p>
+      <p className="card-data">{client.email}</p>
       <Button label="Delete" onClick={() => console.log("delete me")}/>
     </div>
   )

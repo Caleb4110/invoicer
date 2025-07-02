@@ -6,7 +6,11 @@
 .clients-utils-container {
   display: flex;
   flex-direction: row;
-  padding: 0.25rem;
+  padding: 0.5rem;
+}
+
+.clients-utils-container > * + * {
+  margin-left: 0.5rem;
 }
 
 .search-res-container {

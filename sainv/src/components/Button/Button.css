@@ -1,6 +1,15 @@
 .app-button {
-  background-color: var(--color-10);
+  background-color: var(--color-12);
   border: none;
   padding: 0;
+  min-width: 5rem;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
 
+.app-button:hover {
+  background-color: var(--color-10);
+}
+
+.app-button:active {
 }

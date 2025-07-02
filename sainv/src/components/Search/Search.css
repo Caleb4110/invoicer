@@ -2,6 +2,8 @@
   background-color: var(--color-1);
   border: none;
   padding: 0.25rem;
+  font-size: 1rem;
+  color: var(--color-foreground);
 }
 
 .app-search:focus {
