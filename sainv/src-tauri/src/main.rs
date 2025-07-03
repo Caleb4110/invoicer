@@ -1,7 +1,7 @@
 // Prevents additional console window on Windows in release, DO NOT REMOVE!!
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-use inv_tools::{args::NewClientArgs, database, models::Client};
+use inv_tools::{args::{DeleteClientArgs, NewClientArgs}, database, models::Client};
 use rusqlite::Connection;
 use tauri::State;
 
@@ -20,6 +20,12 @@ fn new_client(db: State<DbConn>, name: String, business_name: String, email: Str
     database::new_client(&conn, &NewClientArgs{name: Some(name), business_name: Some(business_name), email: Some(email), address: Some(address)}).unwrap()
 }
 
+#[tauri::command]
+fn delete_client(db: State<DbConn>, id: String) {
+    let conn = db.0.lock().unwrap();
+    database::delete_client(&conn, &DeleteClientArgs {client_id: Some(id)}).unwrap()
+}
+
 fn main() {
     // Set up DB connection and initialize database
     let conn = Connection::open("./clinv.db").expect("Could not open DB");
@@ -28,7 +34,7 @@ fn main() {
 
     tauri::Builder::default()
         .manage(db_conn)
-        .invoke_handler(tauri::generate_handler![all_clients, new_client])
+        .invoke_handler(tauri::generate_handler![all_clients, new_client, delete_client])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

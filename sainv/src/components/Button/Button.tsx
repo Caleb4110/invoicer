@@ -1,15 +1,16 @@
 import "./Button.css"
 
 interface Props {
+  id?: string;
   label: string;
-  onClick: () => void;
+  onClick: (() => void) | ((e: any) => void);
   disabled?: boolean;
 }
 
-export default function Button({ label, onClick, disabled = false }: Props) {
+export default function Button({ id = "", label, onClick, disabled = false }: Props) {
 
   return (
-    <button className="app-button" onClick={onClick} disabled={disabled}>
+    <button id={id.toString()} className="app-button" onClick={onClick} disabled={disabled}>
       {label}
     </button>
   )
